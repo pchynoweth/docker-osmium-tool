@@ -9,5 +9,5 @@ else
     echo "Using non-privileged user"
     addgroup --gid $(ls -dl . | awk '{ print $4; }') user
     useradd --uid $user -g user user
-    runuser -u user $@
+    sudo -u user $@
 fi
